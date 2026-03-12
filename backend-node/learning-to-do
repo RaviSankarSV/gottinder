@@ -1,0 +1,12 @@
+check the dependencies of express module
+waht are mime - types
+caret and tilda
+
+"test": "echo \"Error: no test specified\" && exit 1"
+
+minimum string pattern search for URL -> order of api path is important in node
+
+Regular expressions in nodejs routes: ?,*, (), +
+
+    use of regex in routes / a / /.*fly$/
+Reading the express documentations: query params and dynamic routes in nodejs
