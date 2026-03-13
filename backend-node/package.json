@@ -18,6 +18,7 @@
   "homepage": "https://github.com/RaviSankarSV/gottinder#readme",
   "dependencies": {
     "express": "^5.2.1",
+    "mongoose": "^9.3.0",
     "nodemon": "^3.1.14"
   }
 }

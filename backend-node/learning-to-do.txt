@@ -16,3 +16,8 @@ elamanchili ammagaru
 
 read more about middleware and why do we need middlewares.
 app.use vs app.all
+schema defines the structure of the collection.
+JSON vs Javascript object
+patch vs put
+read findByIdandUpdate
+express json middleware -> app.use(express.json());

@@ -1,89 +1,102 @@
 const express = require('express');
 const app = express();
+const connectDB = require("./config/mongoose");
+const User = require("./models/user");
+const user = require('./models/user');
 
-const { adminAuth, userAuth } = require("./middlewares/authentication");
+app.use(express.json());
 
-
-app.use("/admin", adminAuth);
-//app.get("/user", userAuth);
-
-app.get("/user/login", (req, res) => {
-    res.send("user logged in successfully!");
-})
-
-app.get("/admin/getAdminUser", (req, res) => {
-    res.send("Admin User details are present!");
-})
-
-app.get("/user/getUser", userAuth, (req, res) => {
-    res.send("user details are present!");
-})
-
-app.get("/userDetails", (req, res) => {
+app.post("/signup", async (req, res) => {
+    // const user = new User({
+    //     "firstName": "Jon",
+    //     "lastName": "Snow",
+    //     "emailId": "jon@gmail.com",
+    //     "password": "jon@123",
+    //     "photoUrl": "https://s1.r29static.com/bin/entry/7ae/720x864,85/1841434/image.webp",
+    //     "gender": "male",
+    //     "age": 30,
+    //     "about": "a good warrior",
+    //     "skills": "Leadership"
+    // })
+    const user = new User(req.body);
     try {
-        throw new Error();
-        res.send("User Details send!");
+        await user.save();
+        res.send("User saved successfully!");
     } catch (err) {
-        res.status(500).send("Error Was thrown!");
+        res.status(400).send("Failed to save the user " + err);
     }
 })
 
-app.use("/tests", (req, res) => {
-    res.send("Hello tetsing api");
-});
+app.get("/findById", async (req, res) => {
+    console.log("Id:", req.body);
+    try {
+        const user = await User.findOne({ "_id": req.body._id })
+        console.log("User from db:" + user);
 
-app.use("/Hello", (req, res) => {
-    res.send("Hello api");
-});
-
-app.get("/user/:userId", (req, res) => {
-    console.log("req :", req.params);  //shows the params object : { "userId":123}
-    console.log("")
-})
-
-const rh3 = (req, res, next) => {
-    console.log("ROute handler 3!");
-    next();
-}
-
-app.use("/testRoutes", (req, res, next) => {
-    console.log("Second api function!");
-    next();
-})
-
-
-app.use("/testRoutes", (req, res, next) => {
-    console.log("Route Handler 1 ! ");
-    next();
-}, (req, res, next) => {
-    console.log("Route handle 2!")
-    next();
-}, rh3, [
-    (req, res, next) => {
-        console.log("route handler 4 !");
-        next();
-    }, (req, res) => {
-        console.log("route handler 5 !");
-        res.send("Wokring in 5th handler!");
-    }
-]);
-
-//it wont be called if it is present here
-// app.use("/testRoutes", (req, res, next) => {
-//     console.log("Second api function!");
-//     next();
-// })
-
-app.use("/", (err, req, res, next) => {
-    if (err) {
-        res.send("Something an error!");
+        if (user) {
+            res.status(200).send("user details:" + user);
+        } else {
+            res.status(404).send("User details not found!");
+        }
+    } catch (err) {
+        res.status(500).send("error while fethcing user details!" + err);
     }
 })
 
-// app.use((req, res) => {
-//     res.send("server is running and showing in browser");
-// });
+app.patch("/updateById", async (req, res) => {
+    const userId = req.body._id;
+    console.log("userId: " + userId);
+    const userData = req.body;
+    console.log("userData: " + userData);
+    try {
+        const user = await User.findByIdAndUpdate({ "_id": userId }, userData);
+        if (user) {
+            res.status(200).send("User updated successfully" + user);
+        }
+    } catch (err) {
+        res.status(500).send("Updating user failed!" + err);
+    }
+})
 
-app.listen(7777, () => {
-    console.log("Server is running at 7777");
-});
+
+app.get("/findByEmail", async (req, res) => {
+    console.log("emailId:", req.body);
+    try {
+        const user = await User.findOne({ "emailId": req.body.emailId })
+        console.log("User from db:" + user);
+
+        if (user) {
+            res.status(200).send("user details:" + user);
+        } else {
+            res.status(404).send("User details not found!");
+        }
+    } catch (err) {
+        res.status(500).send("error while fethcing user details!" + err);
+    }
+})
+
+app.get("/feed", async (req, res) => {
+    try {
+        const users = await User.find({});
+        if (users.length > 0) {
+            res.send(users);
+        } else {
+            res.send("No users found!");
+        }
+    } catch (err) {
+        res.status(500).send("internal Server error!");
+    }
+
+})
+
+
+connectDB()
+    .then(() => {
+        console.log("Connection successfully established to MongoDB!");
+        app.listen(7777, () => {
+            console.log("Server started and listening at port:7777");
+        })
+    })
+    .catch((err) => {
+        console.log("Error ,connection failed to MongoDB!" + err);
+    })

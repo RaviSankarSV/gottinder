@@ -1,0 +1,234 @@
+
+[{
+    "firstName": "Jon",
+    "lastName": "Snow",
+    "emailId": "jon@gmail.com",
+    "password": "jon@123",
+    "photoUrl": "https://s1.r29static.com/bin/entry/7ae/720x864,85/1841434/image.webp",
+    "gender": "male",
+    "age": 30,
+    "about": "a good warrior",
+    "skills": "Leadership"
+},
+{
+    "firstName": "Daenaerys",
+    "lastName": "Targaryen",
+    "emailId": "dan@gmail.com",
+    "password": "daenaerys@123",
+    "photoUrl": "https://s1.r29static.com/bin/entry/7ae/720x864,85/1841434/image.webp",
+    "gender": "female",
+    "age": 35,
+    "about": "a good warrior",
+    "skills": "Leadership"
+},
+{
+    "firstName": "Arya",
+    "lastName": "Stark",
+    "emailId": "arya@gmail.com",
+    "password": "arya@123",
+    "photoUrl": "",
+    "gender": "female",
+    "age": 20,
+    "about": "a good warrior",
+    "skills": "Leadership"
+},
+{
+    "firstName": "Sansa",
+    "lastName": "Stark",
+    "emailId": "sansa@gmail.com",
+    "password": "sansa@123",
+    "photoUrl": "https://s1.r29static.com/bin/entry/7ae/720x864,85/1841434/image.webp",
+    "gender": "female",
+    "age": 30,
+    "about": "a good warrior",
+    "skills": "Leadership"
+},
+{
+    "firstName": "Cersei",
+    "lastName": "Lannister",
+    "emailId": "cersei@gmail.com",
+    "password": "cersei@123",
+    "photoUrl": "https://s1.r29static.com/bin/entry/7ae/720x864,85/1841434/image.webp",
+    "gender": "female",
+    "age": 25,
+    "about": "a good warrior",
+    "skills": "Leadership"
+},
+{
+    "firstName": "Joffrey",
+    "lastName": "Baratheon",
+    "emailId": "joffrey@gmail.com",
+    "password": "joffrey@123",
+    "photoUrl": "https://s1.r29static.com/bin/entry/7ae/720x864,85/1841434/image.webp",
+    "gender": "male",
+    "age": 30,
+    "about": "a good warrior",
+    "skills": "Leadership"
+},
+{
+    "firstName": "Ramsay",
+    "lastName": "Bolton",
+    "emailId": "ramsay@gmail.com",
+    "password": "ramsay@123",
+    "photoUrl": "https://s1.r29static.com/bin/entry/7ae/720x864,85/1841434/image.webp",
+    "gender": "male",
+    "age": 30,
+    "about": "a good warrior",
+    "skills": "Leadership"
+},
+{
+    "firstName": "Tyrion",
+    "lastName": "Lannister",
+    "emailId": "tyrion@gmail.com",
+    "password": "tyrion@123",
+    "photoUrl": "https://s1.r29static.com/bin/entry/7ae/720x864,85/1841434/image.webp",
+    "gender": "male",
+    "age": 30,
+    "about": "a good warrior",
+    "skills": "Leadership"
+},
+{
+    "firstName": "Bran",
+    "lastName": "Stark",
+    "emailId": "bran@gmail.com",
+    "password": "bran@123",
+    "photoUrl": "https://s1.r29static.com/bin/entry/7ae/720x864,85/1841434/image.webp",
+    "gender": "male",
+    "age": 30,
+    "about": "a good warrior",
+    "skills": "Leadership"
+},
+{
+    "firstName": "Robb",
+    "lastName": "Stark",
+    "emailId": "robb@gmail.com",
+    "password": "robb@123",
+    "photoUrl": "https://s1.r29static.com/bin/entry/7ae/720x864,85/1841434/image.webp",
+    "gender": "male",
+    "age": 30,
+    "about": "a good warrior",
+    "skills": "Leadership"
+},
+{
+    "firstName": "Daario",
+    "lastName": "Naharis",
+    "emailId": "daario@gmail.com",
+    "password": "daario@123",
+    "photoUrl": "https://s1.r29static.com/bin/entry/7ae/720x864,85/1841434/image.webp",
+    "gender": "male",
+    "age": 30,
+    "about": "a good warrior",
+    "skills": "Leadership"
+},
+{
+    "firstName": "Tywin",
+    "lastName": "Lannister",
+    "emailId": "tywin@gmail.com",
+    "password": "tywin@123",
+    "photoUrl": "https://s1.r29static.com/bin/entry/7ae/720x864,85/1841434/image.webp",
+    "gender": "male",
+    "age": 30,
+    "about": "a good warrior",
+    "skills": "Leadership"
+},
+{
+    "firstName": "Samwell",
+    "lastName": "Tarly",
+    "emailId": "samwell@gmail.com",
+    "password": "samwell@123",
+    "photoUrl": "https://s1.r29static.com/bin/entry/7ae/720x864,85/1841434/image.webp",
+    "gender": "female",
+    "age": 30,
+    "about": "a good warrior",
+    "skills": "Leadership"
+},
+{
+    "firstName": "Viserys",
+    "lastName": "Targaryen",
+    "emailId": "viserys@gmail.com",
+    "password": "viserys@123",
+    "photoUrl": "https://s1.r29static.com/bin/entry/7ae/720x864,85/1841434/image.webp",
+    "gender": "male",
+    "age": 30,
+    "about": "a good warrior",
+    "skills": "Leadership"
+},
+{
+    "firstName": "Tai",
+    "lastName": "Lung",
+    "emailId": "tai@gmail.com",
+    "password": "tai@123",
+    "photoUrl": "https://s1.r29static.com/bin/entry/7ae/720x864,85/1841434/image.webp",
+    "gender": "male",
+    "age": 30,
+    "about": "a good warrior",
+    "skills": "Leadership"
+},
+{
+    "firstName": "Shifu",
+    "lastName": "master",
+    "emailId": "shifu@gmail.com",
+    "password": "shifu@123",
+    "photoUrl": "https://s1.r29static.com/bin/entry/7ae/720x864,85/1841434/image.webp",
+    "gender": "female",
+    "age": 30,
+    "about": "a good warrior",
+    "skills": "Leadership"
+},
+{
+    "firstName": "Tigress",
+    "lastName": "Kung",
+    "emailId": "tigress@gmail.com",
+    "password": "tigress@123",
+    "photoUrl": "https://s1.r29static.com/bin/entry/7ae/720x864,85/1841434/image.webp",
+    "gender": "female",
+    "age": 35,
+    "about": "a good warrior",
+    "skills": "Leadership"
+},
+{
+    "firstName": "oogway",
+    "lastName": "master",
+    "emailId": "oogway@gmail.com",
+    "password": "oogway@123",
+    "photoUrl": "https://s1.r29static.com/bin/entry/7ae/720x864,85/1841434/image.webp",
+    "gender": "male",
+    "age": 30,
+    "about": "a good warrior",
+    "skills": "Leadership"
+},
+{
+    "firstName": "monkey",
+    "lastName": "master",
+    "emailId": "monmaster@gmail.com",
+    "password": "monkey@123",
+    "photoUrl": "https://s1.r29static.com/bin/entry/7ae/720x864,85/1841434/image.webp",
+    "gender": "female",
+    "age": 30,
+    "about": "a good warrior",
+    "skills": "Leadership"
+},
+{
+    "firstName": "Mantis",
+    "lastName": "kung",
+    "emailId": "mantis@gmail.com",
+    "password": "mantis@123",
+    "photoUrl": "https://s1.r29static.com/bin/entry/7ae/720x864,85/1841434/image.webp",
+    "gender": "female",
+    "age": 30,
+    "about": "a good warrior",
+    "skills": "Leadership"
+},
+{
+    "firstName": "first",
+    "lastName": "name",
+    "emailId": "fist@gmail.com",
+    "password": "first@123",
+    "photoUrl": "",
+    "gender": "male",
+    "age": 30,
+    "about": "Warrior",
+    "skills": "Leadership"
+}
+]
+
