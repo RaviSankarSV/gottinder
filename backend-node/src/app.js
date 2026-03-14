@@ -2,28 +2,45 @@ const express = require('express');
 const app = express();
 const connectDB = require("./config/mongoose");
 const User = require("./models/user");
-const user = require('./models/user');
+const bcrypt = require('bcrypt');
+const { validateInputFields } = require('./utils/inputValidator');
+//const user = require('./models/user');
+
 
 app.use(express.json());
 
 app.post("/signup", async (req, res) => {
-    // const user = new User({
-    //     "firstName": "Jon",
-    //     "lastName": "Snow",
-    //     "emailId": "jon@gmail.com",
-    //     "password": "jon@123",
-    //     "photoUrl": "https://s1.r29static.com/bin/entry/7ae/720x864,85/1841434/image.webp",
-    //     "gender": "male",
-    //     "age": 30,
-    //     "about": "a good warrior",
-    //     "skills": "Leadership"
-    // })
-    const user = new User(req.body);
     try {
+        validateInputFields(req);
+        const { password } = req.body;
+        const passwordHash = await bcrypt.hash(password, 10);
+        //console.log("password hash:", passwordHash); becasue it is working
+        req.body.password = passwordHash;
+        const user = new User(req.body);
         await user.save();
         res.send("User saved successfully!");
     } catch (err) {
-        res.status(400).send("Failed to save the user " + err);
+        res.status(400).send("Error : " + err.message);
+    }
+})
+
+app.post("/login", async (req, res) => {
+    try {
+        const { emailId, password } = req.body;
+        //check whether email present
+        const user = await User.findOne({ emailId: emailId });
+        if (!user) {
+            throw new Error(" Invalid User details!");
+        } else {
+            const isPassword = await bcrypt.compare(password, user.password);
+            if (isPassword) {
+                res.status(200).send("Login successfull!");
+            } else {
+                throw new Error(" Invalid credentials!");
+            }
+        }
+    } catch (err) {
+        res.status(400).send("Login failed " + err.message);
     }
 })
 
@@ -47,9 +64,27 @@ app.patch("/updateById", async (req, res) => {
     const userId = req.body._id;
     console.log("userId: " + userId);
     const userData = req.body;
-    console.log("userData: " + userData);
+    console.log("userData:", JSON.stringify(userData, null, 2));
     try {
-        const user = await User.findByIdAndUpdate({ "_id": userId }, userData);
+        const Allowed_Updates = [
+            'firstName', 'lastname', 'emailId', 'password', 'photoUrl', 'skills', 'gender'
+        ]
+
+        // Remove _id and filter only allowed properties
+        const updateData = Object.keys(userData).reduce((obj, key) => {
+            if (key !== '_id' && Allowed_Updates.includes(key)) {
+                obj[key] = userData[key];
+            }
+            return obj;
+        }, {});
+
+        console.log("Filtered update properties:", Object.keys(updateData));
+
+        if (Object.keys(updateData).length === 0) {
+            throw new Error("No valid properties to update!");
+        }
+
+        const user = await User.findByIdAndUpdate({ "_id": userId }, updateData, { returnDocument: 'after' });
         if (user) {
             res.status(200).send("User updated successfully" + user);
         }

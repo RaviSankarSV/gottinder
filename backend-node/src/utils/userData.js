@@ -11,6 +11,17 @@
     "skills": "Leadership"
 },
 {
+    "firstName": "Elon",
+    "lastName": "Stark",
+    "emailId": "jujbi@yahoo.com",
+    "password": "arya@123",
+    "photoUrl": "",
+    "gender": "female",
+    "age": 20,
+    "about": "a good warrior",
+    "skills": "Leadership"
+},
+{
     "firstName": "Daenaerys",
     "lastName": "Targaryen",
     "emailId": "dan@gmail.com",

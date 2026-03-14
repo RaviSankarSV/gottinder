@@ -17,8 +17,10 @@
   },
   "homepage": "https://github.com/RaviSankarSV/gottinder#readme",
   "dependencies": {
+    "bcrypt": "^6.0.0",
     "express": "^5.2.1",
     "mongoose": "^9.3.0",
-    "nodemon": "^3.1.14"
+    "nodemon": "^3.1.14",
+    "validator": "^13.15.26"
   }
 }

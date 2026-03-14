@@ -18,6 +18,15 @@ read more about middleware and why do we need middlewares.
 app.use vs app.all
 schema defines the structure of the collection.
 JSON vs Javascript object
-patch vs put
+patch vs put vs post
 read findByIdandUpdate
 express json middleware -> app.use(express.json());
+Object.keys(userData).reduce
+learn js ticky parts -> object checking and array properties
+DSA
+API level validations on patch and signup api
+check the validator API
+validation :
+    Database should be always protected
+    Learn JS Objects and arrays,strings ,Tricky parts
+install bcrypt package    
